@@ -14,7 +14,6 @@ tags="@Test",
 plugin = {"pretty",
 		"html:target/Login_cucumber-html-report.html",
 		"json:target/cucumber/Login_cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		})
 public class OEP_1_LoginPageRunnerTest {
 

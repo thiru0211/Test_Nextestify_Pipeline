@@ -15,7 +15,6 @@ monochrome = true,
 plugin = {"pretty",
 		"html:target/Admin_cucumberhtml-report.html",
 		"json:target/cucumber/Admin_cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		})
 
 public class OEP_5_AdminRunnerTest {
