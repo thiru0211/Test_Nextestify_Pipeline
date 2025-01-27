@@ -12,13 +12,9 @@ monochrome = true,
 //dryRun = true,
 tags="@Test",
 plugin = {"pretty",
-		"html:target/cucumber-html-report",
-		"html:target/LoginReport.html",
-		"json:target/cucumber/cucumber.json",
-		"junit:target/cucumber.xml",
-		"html:Reports/cucumber-reports.html",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-		"rerun:target/FailedScenarios.txt"
+		"html:target/Login_cucumber-html-report.html",
+		"json:target/cucumber/Login_cucumber.json",
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		})
 public class OEP_1_LoginPageRunnerTest {
 
