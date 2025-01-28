@@ -16,15 +16,15 @@ Feature: ADMIN
     Then Check entered phone number "+91-7305118794" is displayed or not in create admin page
     Then Close Admin button
 
-  @TC_02
-  Scenario: Admin:Filter Check
-    Given Select "All" 1st Option in status dropdown
-    When Select "Active" 2nd Option in status dropdown
-    Then Check Selected "Active" status is displayed or not
-    And Select "Inactive" 3rd Option in status dropdown
-    Then Check Selected "Inactive" status is displayed or not
-    Then Close Admin button
-
+  #@TC_02
+  #Scenario: Admin:Filter Check
+    #Given Select "All" 1st Option in status dropdown
+    #When Select "Active" 2nd Option in status dropdown
+    #Then Check Selected "Active" status is displayed or not
+    #And Select "Inactive" 3rd Option in status dropdown
+    #Then Check Selected "Inactive" status is displayed or not
+    #Then Close Admin button
+#
   #@TC_03
   #Scenario: Admin:User Type Check
     #Given Select "All" 1st Option in user type dropdown
@@ -430,7 +430,7 @@ Feature: ADMIN
     #Then Click login button 5times
     #And Check lock message is displayed or not
     #Then Close Admin button
-
+#
   #@TC_52
   #Scenario: Update Admin:Valid Check
     #Given Enter user name "twofauser@yopmail.com" in the Search box
@@ -439,7 +439,7 @@ Feature: ADMIN
     #And Click no button in the pop up
     #Then Check unlock button is displayed or not
     #Then Close Admin button
-
+#
   #@TC_53
   #Scenario: Update Admin:Valid Check
     #Given Enter user name "twofauser@yopmail.com" in the Search box

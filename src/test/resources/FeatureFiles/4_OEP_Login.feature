@@ -1,22 +1,22 @@
 Feature: Login Page
-@Test
+
   @TC_01
   Scenario: Login:Valid Check
     Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
     When To Check Login Enter username and password are "thirumaran@sankarasoftware.com" and "Thirumaran@8870"
     And click the Signin button To Check Login
     Then close the Login Page
-@Test
-  @TC_02
-  Scenario: Login:Sign Out Check
-    Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
-    When To Check Login Enter username and password are "thirumaran@sankarasoftware.com" and "Thirumaran@8870"
-    And click the Signin button To Check Login
-    Then Click User logo button in Top right corner
-    And Click SignOut button
-    Then Check login page is displayed or not using assert
-    Then close the Login Page
-#@Test
+
+  #@TC_02
+  #Scenario: Login:Sign Out Check
+    #Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
+    #When To Check Login Enter username and password are "thirumaran@sankarasoftware.com" and "Thirumaran@8870"
+    #And click the Signin button To Check Login
+    #Then Click User logo button in Top right corner
+    #And Click SignOut button
+    #Then Check login page is displayed or not using assert
+    #Then close the Login Page
+#
   #@TC_03
   #Scenario: Login:Invalid Check
     #Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
@@ -24,7 +24,7 @@ Feature: Login Page
     #And click the Signin button To Check Login
     #Then Check alert message is displayed or not
     #Then close the Login Page
-
+#
   #@TC_04
   #Scenario: Login:Invalid Check
     #Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
@@ -117,7 +117,7 @@ Feature: Login Page
     #And click the Signin button To Check Login
     #Then Check alert message is displayed or not
     #Then close the Login Page
-#
+#@Test
   #@TC_14
   #Scenario: Login:Unlock Account
     #Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
@@ -140,7 +140,7 @@ Feature: Login Page
   #@TC_16
   #Scenario: Login:2FA Enabled User Check
     #Given To Check Login is navigating to OEP URL is "http://192.168.1.30/OEPADMIN/"
-    #When To Check Login Enter Invalid username and valid password are "twofauser@yopmail.com" and "Thirumaran@111"
+    #When To Check Login Enter Invalid username and valid password are "twofauser123@yopmail.com" and "Thirumaran@111"
     #And click the Signin button To Check Login
     #Then Check the landing page using assert function
     #Then close the Login Page

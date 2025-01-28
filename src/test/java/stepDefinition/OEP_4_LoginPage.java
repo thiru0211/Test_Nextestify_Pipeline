@@ -1,8 +1,10 @@
 package stepDefinition;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -19,7 +21,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class OEP_1_LoginPage {
+public class OEP_4_LoginPage {
 	public WebDriver driver;
 	public WebElement ele, ele1, ele2, ele3, ele4, ele5, ele6, ele7, ele8, ele9;
 	public WebDriverWait wait;
@@ -96,7 +98,7 @@ public class OEP_1_LoginPage {
 	}
 	
 	@Then("Check alert message is displayed or not in Login Page")
-	public void check_alert_message_is_displayed_or_not_in_login_Page() {
+	public void check_alert_message_is_displayed_or_not_in_login_Page() throws InterruptedException {
 		try {
 		    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='Toastify__toast-body']")));
 		    ele1 = driver.findElement(By.xpath("//div[@class='Toastify__toast-body']"));
@@ -271,11 +273,12 @@ public class OEP_1_LoginPage {
 	}
 
 	@Then("Check landing page after click ok button")
-	public void check_landing_page_after_click_ok_button() {
-		String currentUrl = driver.getCurrentUrl();
-		System.out.println("Current URL is: " + currentUrl);
-		String expectedUrl = "http://192.168.1.30/OEPADMIN/Login";
-		Assert.assertEquals("Page navigates to login page", currentUrl, expectedUrl);
+	public void check_landing_page_after_click_ok_button() throws InterruptedException {
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'Login')]")));
+		ele1 = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+		Assert.assertTrue("Page doesnot login to login page", ele1.isDisplayed());
 	}
 
 	@When("Click ENTER button")
