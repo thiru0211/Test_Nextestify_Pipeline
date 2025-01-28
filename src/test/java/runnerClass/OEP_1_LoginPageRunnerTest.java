@@ -12,7 +12,7 @@ monochrome = true,
 //dryRun = true,
 tags="@Test",
 plugin = {"pretty",
-		"html:target/Login_cucumber-html-report.html",
+		"html:target/cucumber/Login_cucumber-html-report.html",
 		"json:target/cucumber/Login_cucumber.json",
 		})
 public class OEP_1_LoginPageRunnerTest {
