@@ -28,7 +28,7 @@ public class OEP_1_TestSetup {
 	public void to_check_test_setup_is_navigating_to_oep_url_is(String url) {
 		System.setProperty("webdriver.chrome.driver", ".\\Driver\\chromedriver.exe");
 		ChromeOptions option = new ChromeOptions();
-//		option.addArguments("--headless=new");
+		option.addArguments("--headless=new");
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.get(url);
@@ -91,6 +91,7 @@ public class OEP_1_TestSetup {
 		Thread.sleep(2000);
 		ele1.sendKeys(username);
 		Thread.sleep(2000);
+		ele1.sendKeys(Keys.ENTER);
 	}
 
 	@When("Enter valid date {string} in the searchbox")
@@ -141,6 +142,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='All Status']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -157,7 +159,16 @@ public class OEP_1_TestSetup {
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='All Test']"));
 		ele2.click();
 	}
-
+	@Then("Click take picture button in test setup")
+	public void click_take_picture_button_in_test_setup() throws InterruptedException {
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//button[normalize-space(text())='Take Picture1']")));
+		ele1 = driver.findElement(By.xpath(
+				"//button[normalize-space(text())='Take Picture1']"));
+		ele1.click();
+	}
 	@When("Select {string} 2nd Option in the dropdown")
 	public void select_2nd_option_in_the_dropdown(String string) throws InterruptedException {
 		Thread.sleep(4000);
@@ -168,6 +179,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='In Progress']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -182,6 +194,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='Practice Test']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -195,6 +208,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='Completed']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -209,6 +223,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='Main Test']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -222,6 +237,7 @@ public class OEP_1_TestSetup {
 		ele1.click();
 		Thread.sleep(2000);
 		ele2 = driver.findElement(By.xpath("//div[normalize-space(text())='Frozen']"));
+		Thread.sleep(2000);
 		ele2.click();
 	}
 
@@ -453,6 +469,7 @@ public class OEP_1_TestSetup {
 		String uuid = UUID.randomUUID().toString();
 		String randomTestName = "Test_" + uuid.substring(0, 8);
 		ele1.sendKeys(randomTestName);
+		
 	}
 
 	@Then("Select valid subject name")

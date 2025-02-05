@@ -30,7 +30,7 @@ public class OEP_4_LoginPage {
 	public void to_check_login_is_navigating_to_oep_url_is(String url) {
 		System.setProperty("webdriver.chrome.driver", ".\\Driver\\chromedriver.exe");
 		ChromeOptions option = new ChromeOptions();
-//		option.addArguments("--headless=old");
+		option.addArguments("--headless=new");
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.get(url);
@@ -50,7 +50,7 @@ public class OEP_4_LoginPage {
 
 	@When("click the Signin button To Check Login")
 	public void click_the_signin_button_to_check_login() {
-		ele1 = driver.findElement(By.xpath("//button[contains(text(),'Login')]"));
+		ele1 = driver.findElement(By.xpath("//button[contains(text(),'Login1')]"));
 		ele1.click();
 	}
 
@@ -73,8 +73,8 @@ public class OEP_4_LoginPage {
 	@Then("Click SignOut button")
 	public void click_sign_out_button() {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[normalize-space()='Logout']")));
-		ele1 = driver.findElement(By.xpath("//span[normalize-space()='Logout']"));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("colorButton1")));
+		ele1 = driver.findElement(By.id("colorButton1"));
 		ele1.click();
 	}
 
@@ -137,7 +137,16 @@ public class OEP_4_LoginPage {
 		Thread.sleep(2000);
 		ele1.sendKeys(Keys.ENTER);
 	}
-
+	@Then("Click take picture button")
+	public void click_take_picture_button() throws InterruptedException {
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//button[normalize-space(text())='Take Picture']")));
+		ele1 = driver.findElement(By.xpath(
+				"//button[normalize-space(text())='Take Picture']"));
+		ele1.click();
+	}
 	@Then("Click edit button to unlock the account")
 	public void click_edit_button_to_unlock_the_account() throws InterruptedException {
 		Thread.sleep(3000);

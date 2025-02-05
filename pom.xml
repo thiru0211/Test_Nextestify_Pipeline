@@ -18,6 +18,14 @@
 				<version>3.3.0</version>
 				<configuration>
    				 <forkMode>always</forkMode>
+   				  <runOrder>sequential</runOrder>  <includes>
+      <include>**/OEP_1_TestSetupRunnerTest.java</include>
+      <include>**/OEP_2_QuestionManagerRunnerTest.java</include>
+      <include>**/OEP_3_StudyMaterialRunnerTest.java</include>
+      <include>**/OEP_4_LoginPageRunnerTest.java</include>
+      <include>**/OEP_5_AdminRunnerTest.java</include>
+      <include>**/OEP_6_RerunFailedScenarios.java</include>
+    </includes>
     			 </configuration>
 				<!--<dependencies>-->
 					<!-- https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit47 -->
